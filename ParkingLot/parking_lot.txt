@@ -1,0 +1,49 @@
+Problem 1: Design a Parking Lot System
+Description:
+
+Design a parking lot system. The parking lot has multiple levels, each level has multiple rows of spots, and each row has multiple spots. The parking lot can park motorcycles, cars, and buses. A motorcycle can park in any spot. A car can park in a regular or large spot. A bus can park in a large spot or multiple regular spots if they are consecutive.
+
+Requirements:
+
+The system should be able to park a vehicle in a spot.
+The system should be able to remove a parked vehicle.
+The system should provide the number of available spots at any point in time.
+The system should provide the ability to query if a specific spot is available.
+Different types of spots (motorcycle, regular, large) should be managed appropriately.
+Classes and Methods:
+
+ParkingLot:
+
+add_level(level: ParkingLevel) -> None
+park_vehicle(vehicle: Vehicle) -> bool
+remove_vehicle(vehicle: Vehicle) -> bool
+get_available_spots() -> int
+is_spot_available(level: int, row: int, spot: int) -> bool
+ParkingLevel:
+
+add_row(row: ParkingRow) -> None
+park_vehicle(vehicle: Vehicle) -> bool
+remove_vehicle(vehicle: Vehicle) -> bool
+get_available_spots() -> int
+is_spot_available(row: int, spot: int) -> bool
+ParkingRow:
+
+add_spot(spot: ParkingSpot) -> None
+park_vehicle(vehicle: Vehicle) -> bool
+remove_vehicle(vehicle: Vehicle) -> bool
+get_available_spots() -> int
+is_spot_available(spot: int) -> bool
+ParkingSpot:
+
+park_vehicle(vehicle: Vehicle) -> bool
+remove_vehicle() -> None
+is_available() -> bool
+Vehicle:
+
+get_type() -> VehicleType
+get_license_plate() -> str
+VehicleType (Enum):
+
+MOTORCYCLE
+CAR
+BUS

@@ -1,0 +1,62 @@
+Problem 2: Design an Online Bookstore
+Description:
+
+Design an online bookstore system. The system should support searching for books by title, author, and genre. Customers should be able to add books to a shopping cart, place orders, and review their order history. Additionally, the system should handle inventory management, including stock levels and updating stock when orders are placed.
+
+Requirements:
+
+Customers can search for books by title, author, and genre.
+Customers can add books to a shopping cart.
+Customers can place orders and view order history.
+The system should manage book inventory and update stock levels accordingly.
+Admin users should be able to add new books, update book details, and manage stock levels.
+Classes and Methods:
+
+Bookstore:
+
+search_books(query: str, filter: Filter) -> List[Book]
+get_book_details(book_id: int) -> Book
+add_book_to_cart(customer_id: int, book_id: int) -> bool
+place_order(customer_id: int) -> Order
+view_order_history(customer_id: int) -> List[Order]
+Book:
+
+get_id() -> int
+get_title() -> str
+get_author() -> str
+get_genre() -> str
+get_stock_level() -> int
+ShoppingCart:
+
+add_book(book: Book) -> bool
+remove_book(book: Book) -> bool
+get_books() -> List[Book]
+get_total_price() -> float
+Order:
+
+get_order_id() -> int
+get_customer() -> Customer
+get_books() -> List[Book]
+get_total_price() -> float
+get_order_date() -> datetime
+Customer:
+
+get_id() -> int
+get_name() -> str
+get_order_history() -> List[Order]
+Inventory:
+
+update_stock(book_id: int, quantity: int) -> None
+get_stock_level(book_id: int) -> int
+Admin:
+
+add_book(book: Book) -> None
+update_book_details(book_id: int, new_details: BookDetails) -> None
+manage_stock(book_id: int, quantity: int) -> None
+BookDetails (Data class):
+
+title: str
+author: str
+genre: str
+price: float
+stock_level: int
