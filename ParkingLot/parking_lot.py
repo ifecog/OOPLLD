@@ -140,7 +140,7 @@ class ParkingLot:
         return False
 
 
-# # Examplr usage
+# # Example usage
 # # Define a parking lot with 1 level, 2 rows per level, and 5 spots per row
 # level1_row1 = ParkingRow(row_id=0, num_of_spots=5, spot_type=VehicleType.CAR)
 # level1_row2 = ParkingRow(row_id=1, num_of_spots=5, spot_type=VehicleType.CAR)
